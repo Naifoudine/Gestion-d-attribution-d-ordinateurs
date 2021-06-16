@@ -7,7 +7,7 @@ if (isset($_SESSION['user'])) {
   exit;
 }
 
-include_once "../test/includes/header.php";
+include_once "./includes/header.php";
 
 // On verifie si le formulaire a été envoyé
 if (!empty($_POST)) {

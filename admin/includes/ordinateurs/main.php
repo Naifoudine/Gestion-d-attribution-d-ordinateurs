@@ -34,7 +34,7 @@ $reqPC = $db->query("SELECT * FROM `Ordinateurs`");
                     <td><?= $donnees['nom_pc']; ?></td>
                     <td><?= $donnees['Adresse_ip']; ?></td>
                     <td><a class="btn btn-warning btn-block" href="editPC.php?id_pc=<?= $donnees['id_pc'] ?>"><i class="bi bi-pencil-square"> Modifier</i></a> <br>
-                        <a class="btn btn-danger btn-block" href="deletePC.php?id_pc=<?= $count['id_pc'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
+                        <a class="btn btn-danger btn-block" href="deletePC.php?id_pc=<?= $donnees['id_pc'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
                     </td>
                 </tr>
             <?php
