@@ -31,6 +31,7 @@ if ($_POST) {
 
 
         $query->execute();
+        $_SESSION['message'] = "Utilisateur ajouté avec succès !";
         header("Location: utilisateurs.php");
     } else {
         $_SESSION['erreur'] = "Le formulaire est incomplet";

@@ -12,6 +12,21 @@ $reqPC = $db->query("SELECT * FROM `Ordinateurs`");
 
 <!-- MAIN -->
 <div class="col p-4">
+    <?php
+    if (!empty($_SESSION['erreur'])) {
+        echo '<div class="alert alert-danger" role="alert">
+					' . $_SESSION['erreur'] . '
+				  </div>';
+        $_SESSION['erreur'] = "";
+    } ?>
+
+    <?php
+    if (!empty($_SESSION['message'])) {
+        echo '<div class="alert alert-success" role="alert">
+					' . $_SESSION['message'] . '
+				  </div>';
+        $_SESSION['message'] = "";
+    } ?>
 
     <div class="row d-inline-block w-100">
         <h1 class="display-4 d-inline-block">Ordinateurs</h1>
@@ -34,7 +49,7 @@ $reqPC = $db->query("SELECT * FROM `Ordinateurs`");
                     <td><?= $donnees['nom_pc']; ?></td>
                     <td><?= $donnees['Adresse_ip']; ?></td>
                     <td><a class="btn btn-warning btn-block" href="editPC.php?id_pc=<?= $donnees['id_pc'] ?>"><i class="bi bi-pencil-square"> Modifier</i></a> <br>
-                        <a class="btn btn-danger btn-block" href="deletePC.php?id_pc=<?= $count['id_pc'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
+                        <a class="btn btn-danger btn-block" href="deletePC.php?id_pc=<?= $donnees['id_pc'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
                     </td>
                 </tr>
             <?php

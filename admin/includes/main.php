@@ -26,7 +26,7 @@ $countUser = $db->query("SELECT COUNT(*) as Total FROM `Utilisateurs`");
                 <div class="col-12 mt-3 mb-1">
                     <h1 class="display-4 text-uppercase">Tableau de bord</h1>
                     <!-- <h4 class="text-uppercase">Tableau de bord</h4> -->
-                    <p>Statistiques des les attributions</p>
+                    <p>Statistiques des attributions</p>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@ $countUser = $db->query("SELECT COUNT(*) as Total FROM `Utilisateurs`");
                                             <h3 class="warning"><?php echo $donnees['Pourcentage']; ?></h3>
 
 
-                                            <span>Pourcentage de postes attribuées</span>
+                                            <span>Pourcentage de postes attribués</span>
                                     </div>
                                     <div class="align-self-center">
                                         <i class="icon-pie-chart warning font-large-2 float-right"></i>

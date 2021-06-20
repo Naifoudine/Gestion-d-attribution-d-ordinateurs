@@ -29,6 +29,7 @@
            </a>
            <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
              <a class="dropdown-item" href="#top">Tableau de bord</a>
+             <a class="dropdown-item" href="attributions.php">Attributions</a>
              <a class="dropdown-item" href="utilisateurs.php">Utilisateurs</a>
              <a class="dropdown-item" href="ordinateurs.php">Ordinateurs</a>
            </div>

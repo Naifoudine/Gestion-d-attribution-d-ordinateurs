@@ -4,7 +4,32 @@ ini_set('display_errors', 'on');
 session_start();
 include_once "./includes/header.php";
 
+require_once "config_centre_culturel.php";
 
+if ($_POST) {
+    if (
+        isset($_POST['nom_pc']) && !empty($_POST['nom_pc'])
+        && isset($_POST['Adresse_ip']) && !empty($_POST['Adresse_ip'])
+    ) {
+
+        $pc = strip_tags($_POST['nom_pc']);
+        $adresseIP = $_POST['Adresse_ip'];
+
+
+        $sql = "INSERT INTO `Ordinateurs` (`id_pc`, `nom_pc`, `Adresse_ip`) VALUES (NULL, :nom_pc, :Adresse_ip);";
+
+        $query = $db->prepare($sql);
+
+        $query->bindValue('nom_pc', $pc, PDO::PARAM_STR);
+        $query->bindValue(':Adresse_ip', $adresseIP, PDO::PARAM_STR);
+
+        $query->execute();
+        $_SESSION['message'] = "Poste ajouté avec succès !";
+        header('Location: ordinateurs.php');
+    } else {
+        $_SESSION['erreur'] = "Le formulaire est incomplet";
+    }
+}
 
 
 
@@ -25,8 +50,8 @@ include_once "./includes/header.php";
             </h1>
             <form method="post">
                 <div class="form-group">
-                    <label for="nom_pc">Nom de l'ordinateur : </label>
-                    <input class="form-nom_pc" type="text" id="id_pc" name="nom_pc">
+                    <label for="nom_pc">Nom du Poste : </label>
+                    <input class="form-control" type="text" id="	nom_pc" name="nom_pc">
                 </div>
 
                 <div class="form-group">
