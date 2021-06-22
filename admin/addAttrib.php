@@ -76,65 +76,18 @@ if ($_POST) {
                             <div class="form-group">
                                 <label for="id_utilisateur">Nom d'utilisateur : </label>
 
-                                <select name="id_utilisateur" id="id_utilisateur">
+                                <input class="form-control" type="text" id="nom_pc" name="nom_pc">
 
-                                    <option selected> <?= "Veullez choisir un utilisateur"; ?> </option>
-
-                                    <?php
-                                    require_once "config_centre_culturel.php";
-
-                                    $requete = 'SELECT * FROM `Utilisateurs`';
-                                    $infosOption = $db->query($requete);
-
-                                    while ($donnee = $infosOption->fetch()) {
-                                        $id_Usr = $donnee['id_utilisateur'];
-                                        $nom_Usr = $donnee['nom_user'];
-                                    ?>
-
-                                        <option value='<?= $id_Usr;
-                                                        ?>'> <?= $nom_Usr;
-                                                                ?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                </select>
                             </div>
 
-                            <!-- <div class="form-group">
-                    <label for="id_pc">Nom du poste :</label>
-                    <input class="form-control" type="text" id="id_pc" name="id_pc" value="<?= $attribution['id_pc']; ?>">
-                </div> -->
+
 
                             <div class="form-group">
-                                <label for="id_pc">Nom du poste : </label>
-                                <!-- <input class="form-control" type="text" id="id_pc" name="id_pc" value="<? //= $attribution['id_pc']; 
-                                                                                                            ?>"> -->
+                                <label for="nom_pc">Nom du poste : </label>
+                                <input class="form-control" type="text" id="nom_pc" name="nom_pc">
 
-                                <select name="id_pc" id="id_pc">
 
-                                    <option selected> <?= "Veullez choisir un poste";
-                                                        ?> </option>
 
-                                    <?php
-                                    require_once "config_centre_culturel.php";
-
-                                    $requete = 'SELECT * FROM `Ordinateurs`';
-                                    $infosOrganisme = $db->query($requete);
-
-                                    while ($donnee = $infosOrganisme->fetch()) {
-                                        $id_Usr = $donnee['id_pc'];
-                                        $nom_Usr = $donnee['nom_pc'];
-                                    ?>
-
-                                        <!-- //echo "<option value='$idDom'> $libDom </option>";   -->
-
-                                        <option value='<?= $id_Usr;
-                                                        ?>'> <?= $nom_Usr;
-                                                                ?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                </select>
                             </div>
 
                             <div class="form-group">
@@ -144,12 +97,12 @@ if ($_POST) {
 
                             <div class="form-group">
                                 <label for="heureDebut">À partir de :</label>
-                                <input class="form-control" type="time" id="heureDebut" name="heureDebut">
+                                <input class="form-control" type="time" id="heureDebut" name="heureDebut" min="08:00">
                             </div>
 
                             <div class="form-group">
                                 <label for="heureFin">Jusqu'à :</label>
-                                <input class="form-control" type="time" id="heureFin" name="heureFin">
+                                <input class="form-control" type="time" id="heureFin" name="heureFin" max="18:00">
                             </div>
 
                             <input type="hidden" id="id_attribution" name="id_attribution">

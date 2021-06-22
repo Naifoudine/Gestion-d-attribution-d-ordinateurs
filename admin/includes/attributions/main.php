@@ -56,7 +56,7 @@ $reqAttrib = $db->query("SELECT * FROM `Attribution` INNER JOIN Utilisateurs U O
                     <td><?= $donnees['heureDebut']; ?></td>
                     <td><?= $donnees['heureFin']; ?></td>
                     <td><a class="btn btn-warning btn-block" href="editAttrib.php?id_attribution=<?= $donnees['id_attribution'] ?>"><i class="bi bi-pencil-square"> Modifier</i></a> <br>
-                        <a class="btn btn-danger btn-block" href="deleteAttrib.php?id_attribution=<?= $donnees['id_attribution'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
+                        <a class="btn btn-danger btn-block" onClick="javascript: return confirm('Voulez vous VRAIMENT supprimer cette attribution ?');" href="deleteAttrib.php?id_attribution=<?= $donnees['id_attribution'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
                     </td>
                 </tr>
             <?php

@@ -50,7 +50,7 @@ $reqUser = $db->query("SELECT * FROM `Utilisateurs`");
                     <td><?= $donnees['tel_user']; ?></td>
                     <td>
                         <a class="btn btn-warning btn-block" href="editUser.php?id_utilisateur=<?= $donnees['id_utilisateur'] ?>"><i class="bi bi-pencil-square"> Modifier</i></a> <br>
-                        <a class="btn btn-danger btn-block" href="deleteUser.php?id_utilisateur=<?= $donnees['id_utilisateur'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
+                        <a class="btn btn-danger btn-block" onClick="javascript: return confirm('Voulez vous VRAIMENT supprimer cet utilisateur ?');" href="deleteUser.php?id_utilisateur=<?= $donnees['id_utilisateur'] ?>"><i class="bi bi-trash"> Supprimer</i></a>
                     </td>
                 </tr>
             <?php
